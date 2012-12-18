@@ -18,7 +18,7 @@ public final class Application {
     this.spreadsheets = new ArrayList<Spreadsheet>();
     this.spreadsheets.add(this.worksheet);
   }
-
+  
   public void exit() {
     System.exit(0);
   }
