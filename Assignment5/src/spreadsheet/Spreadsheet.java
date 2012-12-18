@@ -14,6 +14,9 @@ public class Spreadsheet {
       
     //creates a variable list with the indicated type
     private ArrayList<Node> list;
+    private static int counter;
+    private String name = "";
+    private int hash;
     
     /**
      * Constructor for objects of class Spreadsheet
@@ -21,7 +24,17 @@ public class Spreadsheet {
      */
     public Spreadsheet() {
         list  = new ArrayList<Node>();
-        
+        name = "Sheet" + counter;
+        counter++;
+        hash = counter;
+    }
+    
+    public int hashCode() {
+    	return hash;
+    }
+    
+    public String getName() {
+    	return name;
     }
     
     /**
@@ -50,4 +63,9 @@ public class Spreadsheet {
         return null;
     }
     
+    public boolean equals(Spreadsheet sheet) {
+    	if (sheet != null)
+    	return sheet.getName().equals(this.getName());
+    	else return false;
+    }    
 }
